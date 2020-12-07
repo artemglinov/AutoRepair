@@ -1,0 +1,9 @@
+create table CLIENTS
+(
+    ID           BIGINT identity
+        primary key,
+    FIRST_NAME   VARCHAR(100),
+    PATRONYMIC   VARCHAR(100),
+    LAST_NAME    VARCHAR(100),
+    PHONE_NUMBER VARCHAR(100)
+);

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="database">
+  <database-model serializer="dbm" dbms="HSQLDB" family-id="HSQLDB" format-version="4.19">
+    <root id="1">
+      <ServerVersion>2.4.0</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="PUBLIC">
+      <Current>1</Current>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+    </schema>
+    <schema id="5" parent="2" name="SYSTEM_LOBS"/>
+    <table id="6" parent="4" name="CLIENTS"/>
+    <table id="7" parent="4" name="MECHANICS"/>
+    <table id="8" parent="4" name="ORDERS"/>
+    <column id="9" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="10" parent="6" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="11" parent="6" name="PATRONYMIC">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="12" parent="6" name="LAST_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="13" parent="6" name="PHONE_NUMBER">
+      <Position>5</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <index id="14" parent="6" name="SYS_IDX_SYS_PK_10092_10093">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="6" name="SYS_PK_10092">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="17" parent="7" name="FIRST_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="18" parent="7" name="PATRONYMIC">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="19" parent="7" name="LAST_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="20" parent="7" name="HOURLY_PAYMENT">
+      <Position>5</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="21" parent="7" name="SYS_IDX_SYS_PK_10096_10097">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="22" parent="7" name="SYS_PK_10096">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="24" parent="8" name="DESCRIPTION">
+      <Position>2</Position>
+      <DataType>VARCHAR(500)|12s</DataType>
+    </column>
+    <column id="25" parent="8" name="CLIENT_ID">
+      <Position>3</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="8" name="MECHANIC_ID">
+      <Position>4</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="8" name="CREATION">
+      <Position>5</Position>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="28" parent="8" name="FINISH">
+      <Position>6</Position>
+      <DataType>DATE|91s</DataType>
+    </column>
+    <column id="29" parent="8" name="COST">
+      <Position>7</Position>
+      <DataType>DOUBLE|8s</DataType>
+    </column>
+    <column id="30" parent="8" name="STATUS">
+      <Position>8</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <index id="31" parent="8" name="SYS_IDX_SYS_PK_10100_10105">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="32" parent="8" name="SYS_IDX_SYS_FK_10103_10109">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CLIENT_ID</ColNames>
+    </index>
+    <index id="33" parent="8" name="SYS_IDX_SYS_FK_10104_10111">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MECHANIC_ID</ColNames>
+    </index>
+    <key id="34" parent="8" name="SYS_PK_10100">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="8" name="SYS_FK_10103">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CLIENT_ID</ColNames>
+      <RefTableName>CLIENTS</RefTableName>
+      <RefKeyName>SYS_PK_10092</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="36" parent="8" name="SYS_FK_10104">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MECHANIC_ID</ColNames>
+      <RefTableName>MECHANICS</RefTableName>
+      <RefKeyName>SYS_PK_10096</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

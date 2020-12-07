@@ -1,0 +1,14 @@
+create table ORDERS
+(
+    ID          BIGINT identity
+        primary key,
+    DESCRIPTION VARCHAR(500),
+    CLIENT_ID   BIGINT not null
+        references CLIENTS,
+    MECHANIC_ID BIGINT not null
+        references MECHANICS,
+    CREATION    DATE,
+    FINISH      DATE,
+    COST        DOUBLE,
+    STATUS      VARCHAR(100)
+);
